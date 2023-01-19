@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:28:15 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 19:02:48 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 21:15:38 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 //
 /////////////////////////////////
 
+#include <arpa/inet.h>
 #include <cstring>
+#include <iostream>
 
 /*********************************************************************
 *
@@ -28,14 +30,17 @@
 * @param	ip: const std::string& ip
 * @param	port: port_t port
 *
-* @return	void
+* @return	0 is success otherwise considered as an error
 *
 *********************************************************************/
-void	Socket::SetupSin(int family, const std::string &ip, port_t port)
+int	Socket::SetupSin(int family, const std::string &ip, port_t port)
 {
-	this->_s.sin_addr.s_addr = inet_addr(ip.c_str());
+	std::cout << std::hex << this->InetAddr(ip.c_str()) << std::endl;
+	std::cout << std::hex << inet_addr(ip.c_str()) << std::endl;
+	this->_s.sin_addr.s_addr = this->InetAddr(ip.c_str());
 	this->_s.sin_port = htons(port);
 	this->_s.sin_family = family;
+	return (0);
 }
 
 /*********************************************************************

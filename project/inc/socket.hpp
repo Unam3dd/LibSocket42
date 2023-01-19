@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 20:08:00 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 21:30:31 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <string>
+#include <vector>
 
 //////////////////////////////////
 //
@@ -34,6 +35,8 @@
 
 typedef struct sockaddr_in sin_t;
 typedef u_int16_t		port_t;
+typedef uint32_t		addr_t;
+typedef unsigned char	uint8_t;
 
 //////////////////////////////////
 //
@@ -158,8 +161,16 @@ class	Socket
 		//
 		/////////////////////////////////
 		
-		void	SetupSin(int family, const std::string& ip, port_t port);
+		int		SetupSin(int family, const std::string& ip, port_t port);
 		void	ResetSin(void);
+
+		//////////////////////////////////
+		//
+		//	       INET_ADDR
+		//
+		/////////////////////////////////
+
+		uint32_t	InetAddr(std::string& ip);
 
 		//////////////////////////////////
 		//
@@ -184,7 +195,7 @@ class	Socket
 		//	       PRIVATE
 		//
 		/////////////////////////////////
-		
+
 		sin_t				_s;
 		int					_fd;
 		bool				_iscreated;

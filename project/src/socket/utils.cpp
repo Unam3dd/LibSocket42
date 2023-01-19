@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:47 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 19:50:25 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:03:02 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,3 @@ bool	Socket::isBinded(void)
 {
 	return (this->_isbinded);
 }
-

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:27:30 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 18:45:52 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:30:17 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 *********************************************************************/
 int	Socket::Listen(int backlog)
 {
-	if (listen(this->_fd, backlog))
-		return (-1);
+	if (listen(this->_fd, backlog)) return (-1);
 	this->_isonlistening = true;
 	this->_isbinded = false;
 	return (0);
