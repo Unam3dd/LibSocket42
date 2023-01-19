@@ -1,0 +1,291 @@
+[
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/accept.cpp",
+   "-o",
+   "src/socket/accept.o"
+  ],
+  "file": "src/socket/accept.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/bind.cpp",
+   "-o",
+   "src/socket/bind.o"
+  ],
+  "file": "src/socket/bind.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/clear.cpp",
+   "-o",
+   "src/socket/clear.o"
+  ],
+  "file": "src/socket/clear.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/close.cpp",
+   "-o",
+   "src/socket/close.o"
+  ],
+  "file": "src/socket/close.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/connect.cpp",
+   "-o",
+   "src/socket/connect.o"
+  ],
+  "file": "src/socket/connect.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/listen.cpp",
+   "-o",
+   "src/socket/listen.o"
+  ],
+  "file": "src/socket/listen.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/recv.cpp",
+   "-o",
+   "src/socket/recv.o"
+  ],
+  "file": "src/socket/recv.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/send.cpp",
+   "-o",
+   "src/socket/send.o"
+  ],
+  "file": "src/socket/send.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/socket.cpp",
+   "-o",
+   "src/socket/socket.o"
+  ],
+  "file": "src/socket/socket.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/socket_sin.cpp",
+   "-o",
+   "src/socket/socket_sin.o"
+  ],
+  "file": "src/socket/socket_sin.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/sockopt.cpp",
+   "-o",
+   "src/socket/sockopt.o"
+  ],
+  "file": "src/socket/sockopt.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/socket/utils.cpp",
+   "-o",
+   "src/socket/utils.o"
+  ],
+  "file": "src/socket/utils.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/epoll/close.cpp",
+   "-o",
+   "src/epoll/close.o"
+  ],
+  "file": "src/epoll/close.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/epoll/control.cpp",
+   "-o",
+   "src/epoll/control.o"
+  ],
+  "file": "src/epoll/control.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/epoll/create.cpp",
+   "-o",
+   "src/epoll/create.o"
+  ],
+  "file": "src/epoll/create.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/epoll/epoll.cpp",
+   "-o",
+   "src/epoll/epoll.o"
+  ],
+  "file": "src/epoll/epoll.cpp"
+ },
+ {
+  "directory": "/nfs/homes/stales/Documents/LibSocket42/project",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinc",
+   "-fPIC",
+   "-c",
+   "src/epoll/wait.cpp",
+   "-o",
+   "src/epoll/wait.o"
+  ],
+  "file": "src/epoll/wait.cpp"
+ }
+]

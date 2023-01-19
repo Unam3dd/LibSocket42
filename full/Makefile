@@ -17,7 +17,8 @@ SRCS_SOCKET = src/socket/accept.cpp 	\
 			  src/socket/read.cpp		\
 			  src/socket/write.cpp		\
 			  src/socket/recvfrom.cpp	\
-			  src/socket/sendto.cpp
+			  src/socket/sendto.cpp		\
+			  src/socket/serv.cpp
 
 
 SRCS_EPOLL = src/epoll/close.cpp	\

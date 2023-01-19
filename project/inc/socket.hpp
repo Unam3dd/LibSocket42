@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 17:51:17 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 20:08:00 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #include <cstddef>
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <netdb.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <string>

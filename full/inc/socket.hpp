@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 15:51:54 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 19:54:57 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 /////////////////////////////////
 
 typedef struct sockaddr_in sin_t;
+typedef struct servent	   serv_t;
 typedef u_int16_t		port_t;
 
 //////////////////////////////////
@@ -205,6 +206,16 @@ class	Socket
 		
 		void	SetupSin(int family, const std::string& ip, port_t port);
 		void	ResetSin(void);
+
+		//////////////////////////////////
+		//
+		//	       Servent
+		//
+		/////////////////////////////////
+
+		serv_t	*GetServiceByPort(int port, const char *proto);
+		serv_t	*GetServiceByName(const char *name, const char *proto);
+		void	EndServiceDB(void);
 
 		//////////////////////////////////
 		//
