@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:19 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 18:29:17 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:47:55 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <unistd.h>
 
 /*********************************************************************
-* @brief: Close epoll fd
-*
-* @param  fd: epoll fd
-*
-* @return close(fd) result (0 if success, -1 if error)
-*
-*********************************************************************/
+ * @brief: Close epoll fd
+ *
+ * @param  fd: epoll fd
+ *
+ * @return close(fd) result (0 if success, -1 if error)
+ *
+ *********************************************************************/
 int	Epoll::Close(int fd)
 {
 	return (close(fd));
@@ -29,7 +29,7 @@ int	Epoll::Close(int fd)
 /*********************************************************************
 * @brief: Close epoll fd
 *
-* @param  none: uses this->fd
+* @param  void: uses this->fd
 *
 * @return close(fd) result (0 if success, -1 if error)
 *

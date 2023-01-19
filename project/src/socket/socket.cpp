@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:18 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 18:52:13 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:49:54 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Socket::Socket(void): _fd(-1)
 *
 * @param	family: family of the socket (AF_INET, AF_INET6, AF_UNIX)
 * @param	type: type of the socket (SOCK_STREAM, SOCK_DGRAM, SOCK_RAW)
-* @param	protocol: protocol of the socket (IPPROTO_TCP, IPPROTO_UDP, IPPROTO_RAW)
+* @param	proto: protocol of the socket (IPPROTO_TCP, IPPROTO_UDP, IPPROTO_RAW)
 *
 * @return	void
 *

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:27:12 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 18:42:51 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:49:03 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	Socket::Bind(int family, const std::string& ip, port_t port)
 * @brief	Wrapper on bind, using family and ip in format "ip:port"
 *
 * @param	family: AF_INET or AF_INET6
-* @param	ip: const std::string& ip with port in format "ip:port"
+* @param	address: const std::string& ip with port in format "ip:port"
 *
 * @return	0 if success, -1 if error
 *

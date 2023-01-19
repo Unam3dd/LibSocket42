@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:47 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 18:36:45 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:52:01 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Epoll::Epoll(size_t size): _efd(-1), _isinit(false)
 *
 * @brief	Constructor of the Epoll class / Wrapper on epoll_create1
 *
-* @param	flag: flag to set on the epoll instance
+* @param	flags: flag to set on the epoll instance
 *
 * @return	void
 *
@@ -54,10 +54,9 @@ Epoll::Epoll(int flags): _efd(-1), _isinit(false)
 * @return	void
 *
 *********************************************************************/
-Epoll::~Epoll()
+Epoll::~Epoll(void)
 {
 	if (this->_efd)
 		this->Close();
 	this->_isinit = false;
 }
-

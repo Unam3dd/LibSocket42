@@ -23,7 +23,7 @@ int	Epoll::Create(size_t size)
 *
 * @brief	Wrapper on epoll_create1
 *
-* @param	flag: flag to set on the epoll instance
+* @param	flags: flag to set on the epoll instance
 *
 * @return	0 if success, -1 if error
 *
