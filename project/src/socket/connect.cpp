@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:38 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 17:26:39 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 18:45:22 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 #include <cstdlib>
 #include <sys/socket.h>
 
-//////////////////////////////////
-//
-//	   Socket Connect Methodes
-//
-/////////////////////////////////
-
+/*********************************************************************
+*
+* @brief	Wrapper on connect. Connect the socket to the address and port given in arg
+*
+* @param	family: AF_INET or AF_INET6
+* @param	ip: const std::string& ip
+* @param	port: port_t port
+*
+* @return	0 if success, -1 if error
+*
+*********************************************************************/
 int	Socket::Connect(int family, const std::string& ip, port_t port)
 {
 	int	n = port;
@@ -35,6 +40,17 @@ int	Socket::Connect(int family, const std::string& ip, port_t port)
 	return (0);
 }
 
+/*********************************************************************
+*
+* @brief	Wrapper on connect. Connect the socket to the address and port given in arg
+* 			in format "ip:port"
+*
+* @param	family: AF_INET or AF_INET6
+* @param	address: const std::string& address in format "ip:port"
+*
+* @return	0 if success, -1 if error
+*
+*********************************************************************/
 int	Socket::Connect(int family, const std::string& address)
 {
 	std::string addr;

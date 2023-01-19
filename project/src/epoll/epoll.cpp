@@ -6,19 +6,22 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:47 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 17:43:14 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 18:36:45 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "epoll.hpp"
 #include <unistd.h>
 
-//////////////////////////////////
-//
-//	       Constructor
-//
-/////////////////////////////////
-
+/*********************************************************************
+*
+* @brief	Constructor of the Epoll class / Wrapper on epoll_create
+*
+* @param	size: size of the epoll instance
+*
+* @return	void
+*
+*********************************************************************/
 Epoll::Epoll(size_t size): _efd(-1), _isinit(false)
 {
 	if ((this->_efd = epoll_create(size) < 0))
@@ -26,6 +29,15 @@ Epoll::Epoll(size_t size): _efd(-1), _isinit(false)
 	this->_isinit = true;
 }
 
+/*********************************************************************
+*
+* @brief	Constructor of the Epoll class / Wrapper on epoll_create1
+*
+* @param	flag: flag to set on the epoll instance
+*
+* @return	void
+*
+*********************************************************************/
 Epoll::Epoll(int flags): _efd(-1), _isinit(false)
 {
 	if ((this->_efd = epoll_create(flags) < 0))
@@ -33,12 +45,15 @@ Epoll::Epoll(int flags): _efd(-1), _isinit(false)
 	this->_isinit = true;
 }
 
-//////////////////////////////////
-//
-//	       Destructor
-//
-/////////////////////////////////
-
+/*********************************************************************
+*
+* @brief	Destructor of the Epoll class / Wrapper on close
+*
+* @param	void
+*
+* @return	void
+*
+*********************************************************************/
 Epoll::~Epoll()
 {
 	if (this->_efd)

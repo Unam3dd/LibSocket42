@@ -1,12 +1,15 @@
 #include "epoll.hpp"
 #include <sys/epoll.h>
 
-//////////////////////////////////
-//
-//	       Epoll Create
-//
-/////////////////////////////////
-
+/*********************************************************************
+*
+* @brief	Wrapper on epoll_create
+*
+* @param	size: size of the epoll instance
+*
+* @return	0 if success, -1 if error
+*
+*********************************************************************/
 int	Epoll::Create(size_t size)
 {
 	if (this->_isinit) return (-1);
@@ -16,6 +19,15 @@ int	Epoll::Create(size_t size)
 	return (0);
 }
 
+/*********************************************************************
+*
+* @brief	Wrapper on epoll_create1
+*
+* @param	flag: flag to set on the epoll instance
+*
+* @return	0 if success, -1 if error
+*
+*********************************************************************/
 int Epoll::Create(int flags)
 {
 	if (this->_isinit) return (-1);

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:29:07 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 17:29:08 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/19 18:38:46 by ldournoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 #include <new>
 #include <iostream>
 
-//////////////////////////////////
-//
-//	   Socket Accept Methodes
-//
-/////////////////////////////////
-
+/*********************************************************************
+*
+* @brief	Wrapper on accept without socketfd
+*
+* @param	void
+*
+* @return	pointer to a new Socket class if success, NULL if error
+*
+*********************************************************************/
 Socket	*Socket::Accept(void)
 {
 	sin_t		s;
@@ -37,6 +40,15 @@ Socket	*Socket::Accept(void)
 	return (n);
 }
 
+/*********************************************************************
+*
+* @brief	Wrapper on accept with socketfd
+*
+* @param	fd: socket file descriptor
+*
+* @return	pointer to a new Socket class if success, NULL if error
+*
+*********************************************************************/
 Socket	*Socket::Accept(int fd)
 {
 	sin_t		s;
