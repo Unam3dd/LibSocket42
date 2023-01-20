@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:18 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 17:07:46 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 17:22:51 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ Socket::~Socket(void)
 *
 * @brief    Assignation Operator
 *
-* @param    const Socket& s
+* @param    s: Socket Instance
 *
 * @return    Socket
 *
@@ -94,7 +94,7 @@ Socket	&Socket::operator=(const Socket& s)
 *
 * @brief    Compare to Socket object fd
 *
-* @param    Socket& s
+* @param    s: Socket Instance
 *
 * @return   true if fd is the same otherwise is false 
 *
@@ -108,7 +108,7 @@ bool	Socket::operator==(Socket& s) const
 *
 * @brief    Copy Constructor
 *
-* @param    const Socket& s
+* @param    s:	Socket Instance
 *
 * @return    Copy of Socket Object
 *
