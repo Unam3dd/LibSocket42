@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 21:30:31 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 00:00:46 by sam0verfl0w      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <string>
-#include <vector>
 
 //////////////////////////////////
 //
@@ -166,11 +165,11 @@ class	Socket
 
 		//////////////////////////////////
 		//
-		//	       INET_ADDR
+		//	       Inet Addr
 		//
 		/////////////////////////////////
 
-		uint32_t	InetAddr(std::string& ip);
+		addr_t	InetAddr(const std::string& ip);
 
 		//////////////////////////////////
 		//

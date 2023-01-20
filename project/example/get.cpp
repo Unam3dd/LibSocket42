@@ -1,5 +1,6 @@
 #include "../inc/socket.hpp"
 #include <iostream>
+#include <cstring>
 
 // Compile : c++ -Wall -Wextra -Werror -std=c++98 get.cpp ../libsocket.a
 
@@ -13,6 +14,7 @@ int main(void)
 
 	s.Send(req, 0);
 
+	std::memset(buf, 0, sizeof(buf));
 	s.Recv(buf, sizeof(buf), 0);
 
 	std::cout << buf << std::endl;

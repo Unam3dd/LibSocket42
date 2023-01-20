@@ -1,5 +1,7 @@
 #include "socket.hpp"
+#include <cstddef>
 #include <cstdlib>
+#include <iostream>
 
 /*********************************************************************
 *
@@ -11,10 +13,20 @@
 * @return   IP Address formated on addr_t (unsigned int) 
 *
 *********************************************************************/
-// Not Finished
-addr_t	Socket::InetAddr(std::string& ip)
+
+addr_t	Socket::InetAddr(const std::string& ip)
 {
-	addr_t	addr = 0;
-	uint8_t	data[4] = { 0, 0, 0, 0};
-	return (addr);
+	if (ip.empty()) return (0);
+
+	std::string	tmp = ip;
+	std::string data;
+	uint8_t		addr[4] = {0, 0, 0, 0};
+
+	for (int i = 0; i < 4; i++) {
+		data = tmp.substr(0, tmp.find("."));
+		addr[i] = (uint8_t)std::atoi(data.c_str()) & 0xFF;
+		tmp = tmp.substr(tmp.find(".")+1);
+	}
+
+	return ((addr_t)(addr[3] << 24 | addr[2] << 16 | addr[1] << 8 | addr[0]));
 }
