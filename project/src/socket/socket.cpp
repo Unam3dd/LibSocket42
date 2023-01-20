@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:18 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 19:49:54 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:19:39 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ Socket::Socket(int family, int type, int proto)
 *********************************************************************/
 Socket::~Socket(void)
 {
-	if (this->_fd)
+	if (this->_fd > 0)
 		this->Close(_fd);
 }

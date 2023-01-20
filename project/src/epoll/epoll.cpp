@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:47 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 19:52:01 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:32:06 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 *********************************************************************/
 Epoll::Epoll(size_t size): _efd(-1), _isinit(false)
 {
-	if ((this->_efd = epoll_create(size) < 0))
-		return ;
+	if ((this->_efd = epoll_create(size) < 0)) return ;
 	this->_isinit = true;
 }
 
@@ -40,8 +39,7 @@ Epoll::Epoll(size_t size): _efd(-1), _isinit(false)
 *********************************************************************/
 Epoll::Epoll(int flags): _efd(-1), _isinit(false)
 {
-	if ((this->_efd = epoll_create(flags) < 0))
-		return ;
+	if ((this->_efd = epoll_create(flags) < 0)) return ;
 	this->_isinit = true;
 }
 
@@ -56,7 +54,7 @@ Epoll::Epoll(int flags): _efd(-1), _isinit(false)
 *********************************************************************/
 Epoll::~Epoll(void)
 {
-	if (this->_efd)
+	if (this->_efd > 0)
 		this->Close();
 	this->_isinit = false;
 }
