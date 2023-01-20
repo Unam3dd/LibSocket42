@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 17:06:12 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 18:28:14 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
+#include <netdb.h>
 #include <string>
 
 //////////////////////////////////
@@ -35,6 +36,7 @@
 typedef struct sockaddr_in sin_t;
 typedef u_int16_t		port_t;
 typedef uint32_t		addr_t;
+typedef struct protent	prot_t;
 typedef unsigned char	uint8_t;
 
 //////////////////////////////////
@@ -139,6 +141,28 @@ class	Socket
 
 		//////////////////////////////////
 		//
+		//	       Write
+		//
+		/////////////////////////////////
+		
+		int		Write(int fd, const void *buf, size_t len);
+		int		Write(const void *buf, size_t len);
+		int		Write(const std::string& buf);
+		int		Write(int fd, const std::string& buf);
+
+		//////////////////////////////////
+		//
+		//	       Read
+		//
+		/////////////////////////////////
+		
+		int		Read(int fd, void *buf, size_t len);
+		int		Read(void *buf, size_t len);
+		int		Read(std::string& buf, size_t len);
+		int		Read(int fd, std::string& buf, size_t len);
+
+		//////////////////////////////////
+		//
 		//	       Sockopt
 		//
 		/////////////////////////////////
@@ -181,6 +205,14 @@ class	Socket
 		/////////////////////////////////
 
 		void	Clear(void);
+
+		//////////////////////////////////
+		//
+		//	       Protent
+		//
+		/////////////////////////////////
+
+		prot_t	*GetProtoByName(const std::string& name);
 
 		//////////////////////////////////
 		//

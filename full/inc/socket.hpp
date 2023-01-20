@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 17:11:48 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 18:34:49 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 
 typedef struct sockaddr_in sin_t;
 typedef struct servent	   serv_t;
+typedef struct protoent	   prot_t;
 typedef u_int16_t		port_t;
 
 //////////////////////////////////
@@ -219,6 +220,16 @@ class	Socket
 		serv_t	*GetServiceByPort(int port, const char *proto);
 		serv_t	*GetServiceByName(const char *name, const char *proto);
 		void	EndServiceDB(void);
+
+		//////////////////////////////////
+		//
+		//	       Protent
+		//
+		/////////////////////////////////
+
+		prot_t	*GetProtoByName(const std::string& name);
+		prot_t	*GetProtoByNumber(int proto);
+		void	EndProtEnt(void);
 
 		//////////////////////////////////
 		//
