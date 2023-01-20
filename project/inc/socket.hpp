@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 18:28:14 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 19:40:40 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 /////////////////////////////////
 
 #include <cstddef>
+#include <sstream>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -200,6 +201,14 @@ class	Socket
 
 		//////////////////////////////////
 		//
+		//	       Inet Ntoa
+		//
+		/////////////////////////////////
+
+		std::string	InetNtoa(addr_t addr);
+
+		//////////////////////////////////
+		//
 		//	       Clear
 		//
 		/////////////////////////////////
@@ -213,6 +222,14 @@ class	Socket
 		/////////////////////////////////
 
 		prot_t	*GetProtoByName(const std::string& name);
+
+		//////////////////////////////////
+		//
+		//	       Get Sockaddr in
+		//
+		/////////////////////////////////
+
+		sin_t	*GetSin(void);
 
 		//////////////////////////////////
 		//
@@ -230,6 +247,8 @@ class	Socket
 		//
 		/////////////////////////////////
 
+		template<typename T>
+		std::string			to_string(const T & value) { std::ostringstream oss; oss << value; return (oss.str()); }
 		sin_t				_s;
 		int					_fd;
 		bool				_iscreated;

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:28:15 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 00:46:02 by sam0verfl0w      ###   ########.fr       */
+/*   Updated: 2023/01/20 20:12:27 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 #include <arpa/inet.h>
 #include <cstring>
-#include <iostream>
 
 /*********************************************************************
 *
@@ -53,4 +52,18 @@ int	Socket::SetupSin(int family, const std::string &ip, port_t port)
 void	Socket::ResetSin(void)
 {
 	std::memset(&this->_s, 0, sizeof(sin_t));
+}
+
+/*********************************************************************
+*
+* @brief    Get sockaddr_in structure of Socket Instance
+*
+* @param    void
+*
+* @return    sin_t*
+*
+*********************************************************************/
+sin_t	*Socket::GetSin(void)
+{
+	return (&this->_s);
 }

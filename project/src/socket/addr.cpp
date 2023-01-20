@@ -3,18 +3,7 @@
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
-#include <iostream>
-
-/*********************************************************************
-*
-* @brief    Function like inet_addr reconstruct 
-* 			IP address from string to unsigned integer
-*
-* @param    ip:	pass the string which represent IP address
-*
-* @return   IP Address formated on addr_t (unsigned int) 
-*
-*********************************************************************/
+#include <sstream>
 
 static int	check_format(const std::string& ip)
 {
@@ -31,12 +20,22 @@ static int	check_format(const std::string& ip)
 	for (i = 0; i < ip.size(); i++) {
 		if (d > 3) return (1);
 		if (ip.at(i) == '.' && std::strspn(ip.substr(i).c_str(), ".") > 1) return (1);
-		if (ip.at(i) == '.' && d <= 3) { total_p++; d = (d == 3) ? 0 : d; };
+		if (ip.at(i) == '.' && d <= 3) { total_p++; d = 0; };
 		if (std::isdigit(ip.at(i))) d++;
 	}
 	return (total_p == 3 ? 0 : 1);
 }
 
+/*********************************************************************
+*
+* @brief    Function like inet_addr reconstruct 
+* 			IP address from string to unsigned integer
+*
+* @param    ip:	pass the string which represent IP address
+*
+* @return   IP Address formated on addr_t (unsigned int) 
+*
+*********************************************************************/
 addr_t	Socket::InetAddr(const std::string& ip)
 {
 	if (ip.empty() || check_format(ip)) return (0);
@@ -52,4 +51,28 @@ addr_t	Socket::InetAddr(const std::string& ip)
 	}
 
 	return ((addr_t)(addr[3] << 24 | addr[2] << 16 | addr[1] << 8 | addr[0]));
+}
+
+/*********************************************************************
+*
+* @brief    Function is a wrapper of inet_ntoa
+* 				Convert IP Address in Network byte order to a string
+*
+* @param    
+* @param    
+* @param    
+*
+* @return    
+*
+*********************************************************************/
+std::string	Socket::InetNtoa(addr_t	addr)
+{
+	std::stringstream	s;
+
+	s << to_string(addr & 0xFF) << ".";
+	s << to_string((addr >> 8) & 0xFF) << ".";
+	s << to_string((addr >> 16) & 0xFF) << ".";
+	s << to_string((addr >> 24) & 0xFF);
+
+	return (s.str());
 }
