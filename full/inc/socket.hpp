@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 19:54:57 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 17:11:48 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ class	Socket
 		
 		Socket(void);
 		Socket(int family, int type, int proto);
+		Socket(const Socket& s);
+		Socket	&operator=(const Socket& s);
+		bool	operator==(Socket& s) const;
 		
 		//////////////////////////////////
 		//

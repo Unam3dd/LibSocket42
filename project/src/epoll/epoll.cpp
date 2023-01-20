@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:47 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 16:32:06 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/20 17:21:10 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,51 @@ Epoll::~Epoll(void)
 	if (this->_efd > 0)
 		this->Close();
 	this->_isinit = false;
+}
+
+/*********************************************************************
+*
+* @brief    Copy Constructor
+*
+* @param    e: Instance of Epoll to copy
+*
+* @return    Epoll Instance
+*
+*********************************************************************/
+Epoll::Epoll(const Epoll& e)
+{
+	this->_efd = e._efd;
+	this->_isinit = e._isinit;
+	this->_init_ev = e._init_ev;
+}
+
+/*********************************************************************
+*
+* @brief    Assignation Operator of Epoll Instance
+*
+* @param    e: Instance of Epoll to assign
+*
+* @return    Epoll Instance
+*
+*********************************************************************/
+Epoll	&Epoll::operator=(const Epoll& e)
+{
+	this->_efd = e._efd;
+	this->_isinit = e._isinit;
+	this->_init_ev = e._init_ev;
+	return (*this);
+}
+
+/*********************************************************************
+*
+* @brief    Compare two Epoll Instance
+*
+* @param    e: Instance of Epoll to compare
+*
+* @return   true/false 
+*
+*********************************************************************/
+bool	Epoll::operator==(const Epoll& e)
+{
+	return (this->_efd == e._efd);
 }
