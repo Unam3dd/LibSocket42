@@ -17,7 +17,8 @@ SRCS_SOCKET = src/socket/accept.cpp 	\
 			  src/socket/addr.cpp		\
 			  src/socket/read.cpp		\
 			  src/socket/write.cpp		\
-			  src/socket/proto.cpp
+			  src/socket/proto.cpp		\
+			  src/socket/port.cpp
 
 
 SRCS_EPOLL = src/epoll/close.cpp	\

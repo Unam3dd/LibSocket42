@@ -21,6 +21,7 @@ int main(void)
 
 	std::cout << buf << std::endl;
 	std::cout << s.InetNtoa(ptr->sin_addr.s_addr) << std::endl;
+	std::cout << s.Ntohs(ptr->sin_port) << std::endl; 
 
 	s.Close(); // not necessary
 
