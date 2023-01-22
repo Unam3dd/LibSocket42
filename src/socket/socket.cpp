@@ -6,12 +6,13 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:18 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 17:22:51 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/22 18:39:36 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "socket.hpp"
 #include <cstring>
+#include <ostream>
 #include <sys/socket.h>
 
 /*********************************************************************
@@ -120,4 +121,25 @@ Socket::Socket(const Socket& s)
 	this->_isbinded = s._isbinded;
 	this->_isconnected = s._isconnected;
 	this->_iscreated = s._iscreated;
+}
+
+/*********************************************************************
+*
+* @brief    SetupSocket system call
+*
+* @param    family: AF_INET | AF_INET6..
+* @param    type: SOCK_STREAM | SOCK_DGRAM..
+* @param    proto: IPPROTO_TCP | IPPROTO_UDP..
+*
+* @return    socket file descriptor
+*
+*********************************************************************/
+int	Socket::SetupSocket(int family, int type, int proto)
+{
+	if (this->_iscreated) return (-1);
+	this->_iscreated = false;
+	this->_fd = socket(family, type, proto);
+	if (this->_fd < 0) return (-1);
+	this->_iscreated = true;
+	return (0);
 }

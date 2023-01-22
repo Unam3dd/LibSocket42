@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/22 11:25:57 by sam0verfl0w      ###   ########.fr       */
+/*   Updated: 2023/01/22 18:36:55 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ class	Socket
 		Socket(const Socket& s);
 		Socket	&operator=(const Socket& s);
 		bool	operator==(Socket& s) const;
+		int		SetupSocket(int family, int type, int proto);
 		
 		//////////////////////////////////
 		//
@@ -69,18 +70,9 @@ class	Socket
 		//
 		/////////////////////////////////
 		
-		inline int		SetupSocket(int family, int type, int proto) { return (socket(family, type, proto)); }
 		inline int		Getfd(void) { return (this->_fd); }
 		inline void		Setfd(int fd) { this->_fd = fd; }
 		inline void		CopySin(sin_t *sin) { this->_s = *sin; }
-		
-		/////////////////////////////
-		//
-		//			Friends
-		//
-		/////////////////////////////
-
-		friend std::ostream &operator<<(std::ostream& o, const Socket& s);
 
 		//////////////////////////////////
 		//

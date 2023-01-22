@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:09 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 17:14:02 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/22 16:56:57 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ class Epoll
 		//	       Constructor
 		//
 		/////////////////////////////////
-		
+
+		Epoll(void);
 		Epoll(size_t size);
 		Epoll(int flags);
 		Epoll(const Epoll& e);

@@ -27,6 +27,10 @@ SRCS_EPOLL = src/epoll/close.cpp	\
 			 src/epoll/epoll.cpp	\
 			 src/epoll/wait.cpp
 
+SRCS_TCPSERVER = src/tcpserver/setupserver.cpp \
+				 src/tcpserver/tcpserver.cpp \
+				 src/tcpserver/utils.cpp
+
 ifdef OPTI
 	CXXFLAGS += -Ofast -O1
 endif
@@ -39,7 +43,7 @@ ifdef SIZE
 	CXXFLAGS += -Os
 endif
 
-SRCS = $(SRCS_SOCKET) $(SRCS_EPOLL)
+SRCS = $(SRCS_SOCKET) $(SRCS_EPOLL) $(SRCS_TCPSERVER)
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME).a $(NAME).so

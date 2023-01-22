@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:28:15 by stales            #+#    #+#             */
-/*   Updated: 2023/01/20 20:12:27 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/22 17:08:45 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 int	Socket::SetupSin(int family, const std::string &ip, port_t port)
 {
 	this->_s.sin_addr.s_addr = this->InetAddr(ip.c_str());
+	if (!this->_s.sin_addr.s_addr) return (1);
 	this->_s.sin_port = htons(port);
 	this->_s.sin_family = family;
 	return (0);
