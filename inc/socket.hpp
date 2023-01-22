@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/21 23:39:17 by sam0verfl0w      ###   ########.fr       */
+/*   Updated: 2023/01/22 11:25:57 by sam0verfl0w      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 #include <cstddef>
 #include <sstream>
+#include <ostream>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -72,6 +73,14 @@ class	Socket
 		inline int		Getfd(void) { return (this->_fd); }
 		inline void		Setfd(int fd) { this->_fd = fd; }
 		inline void		CopySin(sin_t *sin) { this->_s = *sin; }
+		
+		/////////////////////////////
+		//
+		//			Friends
+		//
+		/////////////////////////////
+
+		friend std::ostream &operator<<(std::ostream& o, const Socket& s);
 
 		//////////////////////////////////
 		//
