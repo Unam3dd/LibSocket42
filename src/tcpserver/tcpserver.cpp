@@ -82,3 +82,20 @@ TCPServer	&TCPServer::operator=(const TCPServer& s)
 	this->_s = s._s;
 	return (*this);
 }
+
+/*********************************************************************
+*
+* @brief    TCPServer Destructor
+*
+* @param    void
+*
+* @return   void
+*
+*********************************************************************/
+TCPServer::~TCPServer(void)
+{
+	if (this->_s.Getfd() > 0)
+		this->_s.Close();
+	if (this->_e.Getfd() > 0)
+		this->_e.Close();
+}

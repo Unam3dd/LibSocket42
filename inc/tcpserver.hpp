@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:32:23 by stales            #+#    #+#             */
-/*   Updated: 2023/01/22 18:57:46 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/22 23:44:25 by sam0verfl0w      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class TCPServer
 		bool		SetupServer(const std::string& ip, port_t port, tcp_flags_t flags);
 		bool		SetupEpoll(void);
 		bool		Start(void);
-		bool		Close(void);
+		void		Close(void);
 		inline bool	IsInitialized(void) { return (this->_isinitialized); } 
 		void		SetMaxCon(uint32_t backlog);
 
