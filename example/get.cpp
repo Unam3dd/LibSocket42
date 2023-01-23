@@ -19,7 +19,7 @@ int main(void)
 	std::memset(buf, 0, sizeof(buf));
 	s.Recv(buf, sizeof(buf), 0);
 
-	std::cout << buf << std::endl;
+	std::cout << buf << '\n' << std::endl;
 	std::cout << s.InetNtoa(ptr->sin_addr.s_addr) << std::endl;
 	std::cout << s.Ntohs(ptr->sin_port) << std::endl; 
 
