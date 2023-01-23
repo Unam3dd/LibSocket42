@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:24:09 by stales            #+#    #+#             */
-/*   Updated: 2023/01/22 23:34:05 by sam0verfl0w      ###   ########.fr       */
+/*   Updated: 2023/01/23 16:09:04 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 //
 /////////////////////////////////
 
-#ifndef MAX_EV
-#define MAX_EV 16
+#ifndef MAX_EVS
+#define MAX_EVS 16
 #endif
 
 //////////////////////////////////
@@ -124,7 +124,7 @@ class Epoll
 		//
 		/////////////////////////////////
 
-		epoll_event	_init_ev;
+		ev_t		_init_ev;
 		int			_efd;
 		bool		_isinit;
 };

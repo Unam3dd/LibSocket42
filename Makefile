@@ -28,6 +28,10 @@ SRCS_EPOLL = src/epoll/close.cpp	\
 			 src/epoll/wait.cpp		\
 			 src/epoll/utils.cpp
 
+SRCS_TCPSERVER = src/tcpserver/setup.cpp \
+				 src/tcpserver/tcpserver.cpp \
+				 src/tcpserver/utils.cpp
+
 ifdef OPTI
 	CXXFLAGS += -Ofast -O1
 endif
