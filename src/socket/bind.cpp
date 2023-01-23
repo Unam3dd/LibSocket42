@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:27:12 by stales            #+#    #+#             */
-/*   Updated: 2023/01/19 19:49:03 by ldournoi         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:34:48 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 *********************************************************************/
 int Socket::Bind(void)
 {
-	if (bind(this->_fd, (const sockaddr *)&this->_s, sizeof(sin_t)))
+	if (bind(this->_fd, (const sockaddr *)&this->_s, sizeof(sin_t)) < 0)
 		return (-1);
 	this->_isbinded = true;
 	return (0);
@@ -54,7 +54,7 @@ int	Socket::Bind(int family, const std::string& ip, port_t port)
 	
 	this->SetupSin(family, ip, port);
 	
-	if (bind(this->_fd, (const sockaddr *)&this->_s, sizeof(sin_t)))
+	if (bind(this->_fd, (const sockaddr *)&this->_s, sizeof(sin_t)) < 0)
 		return (-1);
 
 	this->_isbinded = true;
@@ -89,7 +89,7 @@ int Socket::Bind(int family, const std::string& address)
 
 	this->SetupSin(family, addr, port);
 
-	if (bind(this->_fd, (const sockaddr *)&this->_s, sizeof(sin_t)))
+	if (bind(this->_fd, (const sockaddr *)&this->_s, sizeof(sin_t)) < 0)
 		return (-1);
 	this->_isbinded = true;
 	return (0);

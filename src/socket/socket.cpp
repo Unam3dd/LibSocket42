@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:26:18 by stales            #+#    #+#             */
-/*   Updated: 2023/01/22 18:39:36 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/23 14:37:35 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,8 @@ int	Socket::SetupSocket(int family, int type, int proto)
 	this->_fd = socket(family, type, proto);
 	if (this->_fd < 0) return (-1);
 	this->_iscreated = true;
+	this->_isconnected = false;
+	this->_isbinded = false;
+	this->_isonlistening = false;
 	return (0);
 }
