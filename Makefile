@@ -18,7 +18,8 @@ SRCS_SOCKET = src/socket/accept.cpp 	\
 			  src/socket/read.cpp		\
 			  src/socket/write.cpp		\
 			  src/socket/proto.cpp		\
-			  src/socket/port.cpp
+			  src/socket/port.cpp		\
+			  src/socket/fcntl.cpp
 
 
 SRCS_EPOLL = src/epoll/close.cpp	\
@@ -27,10 +28,6 @@ SRCS_EPOLL = src/epoll/close.cpp	\
 			 src/epoll/epoll.cpp	\
 			 src/epoll/wait.cpp		\
 			 src/epoll/utils.cpp
-
-SRCS_TCPSERVER = src/tcpserver/setup.cpp \
-				 src/tcpserver/tcpserver.cpp \
-				 src/tcpserver/utils.cpp
 
 ifdef OPTI
 	CXXFLAGS += -Ofast -O1
