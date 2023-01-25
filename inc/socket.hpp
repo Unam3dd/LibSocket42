@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:51:04 by stales            #+#    #+#             */
-/*   Updated: 2023/01/23 19:24:14 by stales           ###   ########.fr       */
+/*   Updated: 2023/01/25 22:46:51 by sam0verfl0w      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@
 //
 /////////////////////////////////
 
+typedef unsigned short		uint16_t;
+typedef unsigned int		uint32_t;
 typedef struct sockaddr_in sin_t;
-typedef u_int16_t		port_t;
+typedef uint16_t		port_t;
 typedef uint32_t		addr_t;
 typedef struct protent	prot_t;
 typedef unsigned char	uint8_t;
@@ -215,6 +217,22 @@ class	Socket
 		/////////////////////////////
 
 		port_t		Ntohs(port_t sin_port);
+
+		/////////////////////////////
+		//
+		//			HTONL
+		//
+		/////////////////////////////
+
+		uint32_t	Htonl(uint32_t hostlong);
+
+		/////////////////////////////
+		//
+		//			HTONS
+		//
+		/////////////////////////////
+
+		uint16_t	Htons(uint16_t hostshort);
 
 		//////////////////////////////////
 		//
