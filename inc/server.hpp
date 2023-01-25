@@ -3,6 +3,7 @@
 
 #include "socket.hpp"
 #include "epoll.hpp"
+#include "datetime.hpp"
 #include <vector>
 #include <map>
 
@@ -95,6 +96,7 @@ class TCPServer
 	protected:
 		Socket							_socket;
 		Epoll							_epoll;
+		DateTime						_dt;
 
 	private:
 		std::string						_host;
