@@ -81,12 +81,23 @@ class TCPServer
 		/////////////////////////////
 
 		void	ShowCallbacks(void);
+
+		/////////////////////////////
+		//
+		//		Set Address&Port
+		//
+		/////////////////////////////
+
+		void	SetHost(const std::string& host);
+		void	SetIP(const std::string& ip);
+		void	SetPort(const port_t port);
 	
 	protected:
 		Socket							_socket;
 		Epoll							_epoll;
 
 	private:
+		std::string						_host;
 		std::string						_ip;
 		port_t							_port;
 		std::map<std::string, func>		_callbacks;
