@@ -48,7 +48,7 @@ class TCPServer
 
 		/////////////////////////////
 		//
-		//			CONSTRUCTOR
+		//		CONSTRUCTOR
 		//
 		/////////////////////////////
 		
@@ -57,14 +57,14 @@ class TCPServer
 
 		/////////////////////////////
 		//
-		//			Methods Utils
+		//		Methods Utils
 		//
 		/////////////////////////////
 		
-		int		Wait(void);
-		int		Handle(const Socket	*client);
-		int		Start(void);
-		int		Close(void);
+		int					Wait(void);
+		int					Handle(const Socket	*client);
+		int					Start(void);
+		int					Close(void);
 
 		/////////////////////////////
 		//
@@ -72,8 +72,8 @@ class TCPServer
 		//
 		/////////////////////////////
 		
-		size_t	GetSizeClients(void);
-		void	ShowAllClients(void);
+		size_t				GetSizeClients(void);
+		void				ShowAllClients(void);
 
 		/////////////////////////////
 		//
@@ -81,7 +81,7 @@ class TCPServer
 		//
 		/////////////////////////////
 
-		void	ShowCallbacks(void);
+		void				ShowCallbacks(void);
 
 		/////////////////////////////
 		//
@@ -89,9 +89,19 @@ class TCPServer
 		//
 		/////////////////////////////
 
-		void	SetHost(const std::string& host);
-		void	SetIP(const std::string& ip);
-		void	SetPort(const port_t port);
+		void				SetHost(const std::string& host);
+		void				SetIP(const std::string& ip);
+		void				SetPort(const port_t port);
+
+		/////////////////////////////
+		//
+		//		Get Address&Port
+		//
+		/////////////////////////////
+		
+		const std::string&	GetHost(void);
+		const std::string&	GetIP(void);
+		const port_t&		GetPort(void);
 	
 	protected:
 		Socket							_socket;
