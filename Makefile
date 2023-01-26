@@ -33,6 +33,12 @@ SRCS_EPOLL = src/epoll/close.cpp	\
 
 SRCS_TIME	= src/datetime/datetime.cpp
 
+SRCS_SRV	= src/server/constructor.cpp	\
+			  src/server/coplien.cpp		\
+			  src/server/start.cpp			\
+			  src/server/close.cpp			\
+			  src/server/utils.cpp
+
 ifdef OPTI
 	CXXFLAGS += -Ofast -O1
 endif
@@ -49,7 +55,7 @@ ifdef DEBUG
 	CXXFLAGS += -g
 endif
 
-SRCS = $(SRCS_SOCKET) $(SRCS_EPOLL) $(SRCS_TCPSERVER) $(SRCS_TIME)
+SRCS = $(SRCS_SOCKET) $(SRCS_EPOLL) $(SRCS_SRV) $(SRCS_TIME)
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME).a $(NAME).so
