@@ -64,7 +64,8 @@ class TCPServer
 		/////////////////////////////
 		
 		tcp_server_status_t	Wait(void);
-		tcp_server_status_t	Handle(const Socket	*client);
+		tcp_server_status_t	Handle(Socket	*client);
+		tcp_server_status_t	AcceptClient(void);
 		tcp_server_status_t	Start(void);
 		tcp_server_status_t	Close(void);
 
@@ -74,8 +75,7 @@ class TCPServer
 		//
 		/////////////////////////////
 		
-		size_t				GetSizeClients(void);
-		void				ShowAllClients(void);
+		size_t				ClientsLenght(void);
 
 		/////////////////////////////
 		//
@@ -119,6 +119,7 @@ class TCPServer
 		port_t													_port;
 		std::map<std::string, func>								_callbacks;
 		std::vector<Socket*>									_clients;
+		volatile int											_run;
 };
 
 #endif

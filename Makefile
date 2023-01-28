@@ -37,8 +37,11 @@ SRCS_SRV	= src/server/constructor.cpp	\
 			  src/server/coplien.cpp		\
 			  src/server/start.cpp			\
 			  src/server/close.cpp			\
-			  src/server/utils.cpp			 \
-			  src/server/error.cpp
+			  src/server/utils.cpp			\
+			  src/server/error.cpp			\
+			  src/server/accept.cpp			\
+			  src/server/handle.cpp			\
+			  src/server/wait.cpp
 
 ifdef OPTI
 	CXXFLAGS += -Ofast -O1
