@@ -107,7 +107,7 @@ class TCPServer
 
 		const std::map<tcp_server_status_t, std::string>& _error_table(void);
 		const std::string& GetError(tcp_server_status_t status);
-	
+
 	protected:
 		Socket													_socket;
 		Epoll													_epoll;

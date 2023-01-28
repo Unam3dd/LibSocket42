@@ -1,6 +1,7 @@
 #include "epoll.hpp"
 #include "server.hpp"
 #include <iostream>
+#include <csignal>
 
 /*********************************************************************
 *

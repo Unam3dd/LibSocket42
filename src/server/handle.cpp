@@ -1,5 +1,6 @@
 #include "server.hpp"
 #include <iostream>
+#include <unistd.h>
 
 /*********************************************************************
 *
@@ -10,6 +11,7 @@
 * @return   tcp_server_status_t
 *
 *********************************************************************/
+
 
 tcp_server_status_t	TCPServer::Handle(Socket *s)
 {
