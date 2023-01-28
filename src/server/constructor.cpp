@@ -16,9 +16,8 @@ TCPServer::TCPServer(const std::string& host)
 		std::cout << "Please Enter a valid host like this : <ip>:<port> !" << std::endl;
 		return ;
 	}
-
 	this->SetHost(host);
-	std::cout << "[" << _dt.Now()  << "] Host was set !" << std::endl;
+	std::cout << "[" << _dt.Now("%H:%M:%S")  << "] Host was set !" << std::endl;
 }
 
 /*********************************************************************
@@ -38,7 +37,7 @@ TCPServer::TCPServer(const std::string& ip, port_t port)
 		return ;
 	}
 	this->SetIP(ip);
-	std::cout << "[" << _dt.Now() << "] Bind Address was set !" << std::endl;
+	std::cout << "[" << _dt.Now("%H:%M:%S") << "] Bind Address was set !" << std::endl;
 	this->SetPort(port);
-	std::cout << "[" << _dt.Now() << "] Bind Port was set !" << std::endl;
+	std::cout << "[" << _dt.Now("%H:%M:%S") << "] Bind Port was set !" << std::endl;
 }

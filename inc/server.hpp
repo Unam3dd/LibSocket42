@@ -16,12 +16,14 @@
 enum	tcp_server_status_t
 {
 	TCP_SERVER_SUCCESS,
+	TCP_SERVER_ERR_CREATE,
 	TCP_SERVER_ERR_BIND,
 	TCP_SERVER_ERR_LISTEN,
 	TCP_SERVER_ERR_EPOLL,
 	TCP_SERVER_ERR_ACCEPT,
 	TCP_SERVER_ERR_EPOLL_ADD,
-	TCP_SERVER_ERR_CLOSE
+	TCP_SERVER_ERR_CLOSE,
+	TCP_SERVER_ERR_OPT
 };
 
 /////////////////////////////
@@ -61,10 +63,10 @@ class TCPServer
 		//
 		/////////////////////////////
 		
-		int					Wait(void);
-		int					Handle(const Socket	*client);
-		int					Start(void);
-		int					Close(void);
+		tcp_server_status_t	Wait(void);
+		tcp_server_status_t	Handle(const Socket	*client);
+		tcp_server_status_t	Start(void);
+		tcp_server_status_t	Close(void);
 
 		/////////////////////////////
 		//
@@ -102,18 +104,21 @@ class TCPServer
 		const std::string&	GetHost(void);
 		const std::string&	GetIP(void);
 		const port_t&		GetPort(void);
+
+		const std::map<tcp_server_status_t, std::string>& _error_table(void);
+		const std::string& GetError(tcp_server_status_t status);
 	
 	protected:
-		Socket							_socket;
-		Epoll							_epoll;
-		DateTime						_dt;
+		Socket													_socket;
+		Epoll													_epoll;
+		DateTime												_dt;
 
 	private:
-		std::string						_host;
-		std::string						_ip;
-		port_t							_port;
-		std::map<std::string, func>		_callbacks;
-		std::vector<Socket*>			_clients;
+		std::string												_host;
+		std::string												_ip;
+		port_t													_port;
+		std::map<std::string, func>								_callbacks;
+		std::vector<Socket*>									_clients;
 };
 
 #endif

@@ -10,12 +10,12 @@
 * @return   0 success otherwise considered as an error 
 *
 *********************************************************************/
-int	TCPServer::Close(void)
+tcp_server_status_t TCPServer::Close(void)
 {
 	if (this->_epoll.Getfd())
 		this->_epoll.Close();
 	if (this->_socket.Getfd())
 		this->_socket.Close();
-	std::cout << "[" << this->_dt.Now() << "] Server Closed !" << std::endl;
-	return (0);
+	std::cout << "[" << this->_dt.Now("%H:%M:%S") << "] Server Closed !" << std::endl;
+	return (TCP_SERVER_SUCCESS);
 }
