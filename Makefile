@@ -25,7 +25,7 @@ OBJDIR = obj
 SRCS = $(shell find src -iname "*.cpp" -type f -print)
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(NAME).a $(NAME).so
+all: $(DIST)
 
 %.o: %.cpp
 	$(CC) $(CXXFLAGS) -c $< -o $@
@@ -45,7 +45,7 @@ clean:
 	rm -rf $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME).a $(NAME).so
+	rm -rf $(DIST)
 
 re: fclean $(NAME).a $(NAME).so
 
