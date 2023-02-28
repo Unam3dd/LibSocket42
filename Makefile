@@ -25,18 +25,16 @@ OBJDIR = obj
 SRCS = $(shell find src -iname "*.cpp" -type f -print)
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(DIST)
+all: $(DIST) $(DIST)/$(NAME).a $(DIST)/$(NAME).so
 
 %.o: %.cpp
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
-$(NAME).a: $(DIST) $(OBJS)
-	ar rcs $(NAME).a $(OBJS)
-	mv $(NAME).a $(DIST)
+$(DIST)/$(NAME).a: $(OBJS)
+	ar rcs $(DIST)/$(NAME).a $(OBJS)
 
-$(NAME).so: $(DIST) $(OBJS)
-	$(CC) $(CXXFLAGS) -shared $(OBJS) -o $(NAME).so
-	mv $(NAME).so $(DIST)
+$(DIST)/$(NAME).so: $(OBJS)
+	$(CC) $(CXXFLAGS) -shared $(OBJS) -o $(DIST)/$(NAME).so
 
 $(DIST):
 	mkdir -p $(DIST)
@@ -47,6 +45,6 @@ clean:
 fclean: clean
 	rm -rf $(DIST)
 
-re: fclean $(NAME).a $(NAME).so
+re: fclean all
 
 .PHONY: all clean fclean re
